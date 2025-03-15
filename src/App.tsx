@@ -28,13 +28,8 @@ function App() {
           <Route path="/modal" element={<Files />} />
           <Route path="/modal" element={<Files />} />
           <Route path="/modal" element={<Files />} />
-
-
-
-
         </Route>
       </Routes>
-      <Layout />
     </div>
   );
 }

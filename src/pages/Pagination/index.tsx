@@ -8,7 +8,7 @@ const PaginationPage = () => {
         <Pagination
           currentPage={1}
           onPageChange={(page) => console.log(page)}
-          totalItems={100}
+          totalItems={1000}
           itemsPerPage={5}
         />
       </div>

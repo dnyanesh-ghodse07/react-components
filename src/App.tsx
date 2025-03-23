@@ -26,23 +26,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Route path="/job-board" element={<Files />} />
-          <Route path="/carousal" element={<Files />} />
-          <Route path="/progress-bar" element={<Files />} />
-
-          <Route path="/like-button" element={<Files />} />
-          <Route path="/traffic-light" element={<Files />} />
-          <Route path="/digital-clock" element={<Files />} />
-          <Route path="/stopwatch" element={<Files />} /> */
-}
-
-{
-  /* <Route path="/nested-checkboxs" element={<Files />} />
-          <Route path="/data-table" element={<Files />} />
-          <Route path="/modal" element={<Files />} /> // https://www.greatfrontend.com/interviews/study/gfe75/questions/system-design/modal-dialog
-          <Route path="/modal" element={<Files />} />
-          <Route path="/modal" element={<Files />} />
-          <Route path="/modal" element={<Files />} /> */
-}

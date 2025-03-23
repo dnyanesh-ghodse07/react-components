@@ -116,7 +116,7 @@ const OtpInputs = ({
                 {otp.map((_, i) => (
                   <input
                     key={i}
-                    type="text"
+                    type="number"
                     ref={(el) => (inputRef.current[i] = el!)}
                     className={`placeholder:text-center placeholder:text-gray-400 border border-gray-300 p-2 w-12 text-center rounded-md flex items-center justify-center`}
                     maxLength={1}

@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import ComponentsPage from "./pages/components";
 import OtpInputPage from "./pages/otp_input/OtpInputPage";
 import StarRatingPage from "./pages/star_rating";
 import FilesPage from "./pages/files";
 import Home from "./pages/home";
-import ComponentsPage from "./pages/components";
+import PaginationPage from "./pages/pagination_page";
 import Navbar from "./components/UI/Navbar";
-import PaginationPage from "./pages/pagination";
 
 function App() {
   return (

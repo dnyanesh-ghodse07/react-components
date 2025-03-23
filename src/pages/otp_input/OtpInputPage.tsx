@@ -1,7 +1,7 @@
 import { useState } from "react";
 import OtpInputs from "../../components/OtpInputs/OtpInputs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { FaGithub } from "react-icons/fa";
+import Header from "../../components/UI/Header";
 
 const OtpInputPage = () => {
   const [otpLength, setOtpLength] = useState<4 | 6>(4);
@@ -41,31 +41,27 @@ const OtpInputPage = () => {
 
   return (
     <div>
-      <div className="flex flex-row gap-2 items-center mb-2">
-        <h1 className="text-2xl font-semibold text-blue-400">OTP Input</h1>
-        <button className="cursor-pointer">
-          <a href="https://github.com/dnyanesh-ghodse07/react-components/blob/main/src/components/OtpInputs/OtpInputs.tsx">
-            <FaGithub className="text-2xl" />
-          </a>
-        </button>
-      </div>
-      <p>Correct OTP: {otpLength === 4 ? "1234" : "123456"}</p>
-      <div className="flex items-center">
-        <h2 className="font-semibold">Input Length</h2>
-        <div>
-          {otps.map((otp, i) => (
-            <button
-              key={i}
-              className={`px-3 py-1 m-2 cursor-pointer ${
-                otp === otpLength ? "bg-blue-500 text-white" : "bg-gray-200"
-              }`}
-              onClick={() => setOtpLength(otp as 4 | 6)}
-            >
-              {otp}
-            </button>
-          ))}
+      <Header title="OTP Input" githubLink="https://github.com/dnyanesh-ghodse07/react-components/blob/main/src/components/OtpInputs/OtpInputs.tsx" />
+      <div className="flex flex-row justify-between gap-2 items-center">
+        <p className="text-sm">Correct OTP: {otpLength === 4 ? "1234" : "123456"}</p>
+        <div className="flex items-center">
+          <h2 className="text-sm">Input Length</h2>
+          <div>
+            {otps.map((otp, i) => (
+              <button
+                key={i}
+                className={`px-3 py-1 m-2 cursor-pointer ${
+                  otp === otpLength ? "bg-blue-500 text-white" : "bg-gray-200"
+                }`}
+                onClick={() => setOtpLength(otp as 4 | 6)}
+              >
+                {otp}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
+
       <div className="mt-4 text-center p-4 mx-auto">
         {message ? (
           <div className="flex items-center flex-col gap-4  mt-1">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Pagination from "../../components/Pagination/Pagination";
+import Header from "../../components/UI/Header";
 
 const PaginationPage = () => {
   const [totalItems, setTotalItems] = useState(100);
@@ -16,47 +17,51 @@ const PaginationPage = () => {
     setCurrentPage(1); // Reset to the first page
   };
 
-  const handleItemsPerPageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleItemsPerPageChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setItemsPerPage(Number(e.target.value));
     setCurrentPage(1); // Reset to the first page
   };
 
   return (
-    <div className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">Pagination</h1>
+    <div className="">
+      <Header title="Pagination" githubLink="https://github.com/dnyanesh-ghodse07/react-components/blob/main/src/components/Pagination/Pagination.tsx" />
 
-      {/* Total Items */}
-      <div className="flex items-center space-x-4 mb-4">
-        <h1 className="text-lg">Total Items</h1>
-        <select
-          value={totalItems}
-          onChange={handleTotalItemsChange}
-          className="border rounded-md p-2"
-        >
-          <option value="100">100</option>
-          <option value="300">300</option>
-          <option value="500">500</option>
-          <option value="1000">1000</option>
-        </select>
-      </div>
+      <div className="flex flex-row items-center justify-between">
+        {/* Total Items */}
+        <div className="flex items-center space-x-2 mb-2">
+          <h1 className="">Total Items</h1>
+          <select
+            value={totalItems}
+            onChange={handleTotalItemsChange}
+            className="border rounded-md"
+          >
+            <option value="100">100</option>
+            <option value="300">300</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+          </select>
+        </div>
 
-      {/* Items Per Page */}
-      <div className="flex items-center space-x-4 mb-4">
-        <h1 className="text-lg">Items Per Page</h1>
-        <select
-          value={itemsPerPage}
-          onChange={handleItemsPerPageChange}
-          className="border rounded-md p-2"
-        >
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="50">50</option>
-        </select>
+        {/* Items Per Page */}
+        <div className="flex items-center space-x-2 mb-2">
+          <h1 className="">Items Per Page</h1>
+          <select
+            value={itemsPerPage}
+            onChange={handleItemsPerPageChange}
+            className="border rounded-md"
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
+        </div>
       </div>
 
       {/* Pagination Component */}
-      <div className="w-full">
+      <div className="w-full mt-6">
         <Pagination
           currentPage={currentPage}
           onPageChange={handlePageChange}

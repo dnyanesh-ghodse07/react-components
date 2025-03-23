@@ -17,28 +17,28 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className="bg-slate-100 w-screen h-screen flex">
+    <div className=" w-screen h-screen flex">
       {sidebarClose && (
         <aside className="min-w-36 px-2 py-4 rounded-md shadow">
           <h2 className="text-xl font-semibold border-b-1 mb-2">Components</h2>
           <ul className="">
             <li>
-              <NavLink to="/file-explorer" className="block p-2">
+              <NavLink to="components/file-explorer" className="block p-2">
                 Files
               </NavLink>
             </li>
             <li>
-              <NavLink to="/pagination" className="block p-2">
+              <NavLink to="components/pagination" className="block p-2">
                 Pagination
               </NavLink>
             </li>
             <li>
-              <NavLink to="/star-rating" className="block p-2">
+              <NavLink to="components/star-rating" className="block p-2">
                 Star Rating
               </NavLink>
             </li>
             <li>
-              <NavLink to="/otp-input" className="block p-2">
+              <NavLink to="components/otp-input" className="block p-2">
                 OTP Input
               </NavLink>
             </li>

@@ -80,7 +80,6 @@ const Files = () => {
     <div>
       <div className="flex items-center gap-2">
         <h2>Files </h2>
-        
       </div>
       <div>
         {data.map((file) => (

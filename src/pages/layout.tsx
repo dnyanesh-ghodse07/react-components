@@ -1,11 +1,19 @@
 // import React from "react";
 // import Files from "../components/Files";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Layout = () => {
   const [sidebarClose, setSidebarClose] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setSidebarClose(false);
+    }
+  }
+  , []);
+
   return (
     <div className="bg-slate-100 w-screen h-screen flex">
       {sidebarClose && (
@@ -23,7 +31,14 @@ const Layout = () => {
               </NavLink>
             </li>
             <li>
-              <a href=""></a>
+              <NavLink to="/star-rating" className="block p-2">
+                Star Rating
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/otp-input" className="block p-2">
+                OTP Input
+              </NavLink>
             </li>
           </ul>
         </aside>

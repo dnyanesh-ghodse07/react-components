@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GrStarOutline } from "react-icons/gr";
 
-const StarRating = ({ numOfStars = 5 }) => {
+interface StarRatingProps {
+  numOfStars?: 3 | 5;
+  handleOnChange: (rating: number) => void;
+}
+
+const StarRating = ({ numOfStars = 5, handleOnChange }: StarRatingProps) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
 
-  const stars = Array(numOfStars).fill(0);
+  useEffect(() => {
+    if(handleOnChange) handleOnChange(rating);
+  }, [rating, handleOnChange]);
+
   return (
     <div className="flex items-center space-x-2">
-      {stars.map((_, i) => (
+      {Array(numOfStars).fill(0)?.map((_, i) => (
         <span
           key={i}
           onClick={() => setRating(i + 1)}

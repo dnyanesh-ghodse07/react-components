@@ -3,8 +3,8 @@ import Layout from "./pages/layout";
 import { Route, Routes } from "react-router-dom";
 import './App.css'
 import PaginationPage from "./pages/Pagination";
-import StarRating from "./components/StarRating/StarRating";
 import OtpInputPage from "./pages/OtpInputPage/OtpInputPage";
+import StarRatingPage from "./pages/StarRatingPage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path="/digital-clock" element={<Files />} />
           <Route path="/stopwatch" element={<Files />} />
 
-          <Route path="/star-rating" element={<StarRating />} />
+          <Route path="/star-rating" element={<StarRatingPage />} />
           <Route path="/file-explorer" element={<Files />} />
           <Route path="/pagination" element={<PaginationPage />} />
           <Route path="/otp-input" element={<OtpInputPage />} />

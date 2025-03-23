@@ -42,13 +42,12 @@ const OtpInputPage = () => {
   return (
     <div>
       <div className="flex flex-row gap-2 items-center mb-2">
-      <h1 className="text-2xl font-semibold text-blue-400">OTP Input</h1>
-      <button className="cursor-pointer">
-        <a href="">
-
-        <FaGithub className="text-2xl" />
-        </a>
-      </button>
+        <h1 className="text-2xl font-semibold text-blue-400">OTP Input</h1>
+        <button className="cursor-pointer">
+          <a href="https://github.com/dnyanesh-ghodse07/react-components/blob/main/src/components/OtpInputs/OtpInputs.tsx">
+            <FaGithub className="text-2xl" />
+          </a>
+        </button>
       </div>
       <p>Correct OTP: {otpLength === 4 ? "1234" : "123456"}</p>
       <div className="flex items-center">
@@ -67,7 +66,7 @@ const OtpInputPage = () => {
           ))}
         </div>
       </div>
-      <div className="mt-4 text-center">
+      <div className="mt-4 text-center p-4 mx-auto">
         {message ? (
           <div className="flex items-center flex-col gap-4  mt-1">
             <p>{message}</p>

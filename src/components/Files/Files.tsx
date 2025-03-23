@@ -58,7 +58,7 @@ const File = ({ file }: { file: FileProps }) => {
           className="flex items-center gap-2 cursor-pointer"
         >
           <span>{file.name}</span>
-          {file.children && (
+          {file.children?.length as number > 0 && (
             <span>{isOpen ? "-" : "+"}</span>
           )}
         </div>

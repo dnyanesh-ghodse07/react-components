@@ -4,5 +4,4 @@ export interface PaginationProps {
   onPageChange: (page: number) => void;
   itemsPerPage: number;
   visiblePages?: number;
-  color: string
 }

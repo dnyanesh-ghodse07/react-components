@@ -11,6 +11,8 @@ const Layout = () => {
   useEffect(() => {
     if (window.innerWidth < 768) {
       setSidebarClose(false);
+    }else{
+      setSidebarClose(true);
     }
   }, []);
 

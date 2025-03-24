@@ -1,5 +1,6 @@
-import Files from "../../components/Files/Files"
-import Header from "../../components/UI/Header"
+import Files from "../../../components/Files/Files"
+import Header from "../../../components/UI/Header"
+
 
 const FilesPage = () => {
   return (

@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import ComponentsPage from "./pages/components";
-import OtpInputPage from "./pages/otp_input/OtpInputPage";
-import StarRatingPage from "./pages/star_rating";
-import FilesPage from "./pages/files";
+import ComponentsPage from "./pages/component_list";
+import OtpInputPage from "./pages/component_list/otp_input";
+import StarRatingPage from "./pages/component_list/star_rating";
+import FilesPage from "./pages/component_list/files";
 import Home from "./pages/home";
-import PaginationPage from "./pages/pagination_page";
+import PaginationPage from "./pages/component_list/pagination_page";
 import Navbar from "./components/UI/Navbar";
+import Utilities from "./pages/utility_functions";
+import UtilityDetailPage from "./pages/utility_functions/UtilityDetailPage";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/components/file-explorer" element={<FilesPage />} />
         <Route path="/components/pagination" element={<PaginationPage />} />
         <Route path="/components/otp-input" element={<OtpInputPage />} />
+        <Route path="/utilities" element={<Utilities />} />
+        <Route path="/utility_functions/:title" element={<UtilityDetailPage />} />
       </Routes>
     </div>
   );

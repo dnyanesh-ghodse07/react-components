@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Pagination from "../../components/Pagination/Pagination";
-import Header from "../../components/UI/Header";
+import Header from "../../../components/UI/Header";
+import Pagination from "../../../components/Pagination/Pagination";
 
 const PaginationPage = () => {
   const [totalItems, setTotalItems] = useState(100);

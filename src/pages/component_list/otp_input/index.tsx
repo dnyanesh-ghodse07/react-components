@@ -1,7 +1,7 @@
 import { useState } from "react";
-import OtpInputs from "../../components/OtpInputs/OtpInputs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import Header from "../../components/UI/Header";
+import Header from "../../../components/UI/Header";
+import OtpInputs from "../../../components/OtpInputs/OtpInputs";
 
 const OtpInputPage = () => {
   const [otpLength, setOtpLength] = useState<4 | 6>(4);

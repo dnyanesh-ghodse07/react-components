@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import StarRating from '../../components/StarRating/StarRating'
-import Header from '../../components/UI/Header';
+import Header from '../../../components/UI/Header';
+import StarRating from '../../../components/StarRating/StarRating';
 
 
 const StarRatingPage = () => {

@@ -118,8 +118,9 @@ const OtpInputs = ({
                     key={i}
                     type="number"
                     ref={(el) => (inputRef.current[i] = el!)}
-                    className={`placeholder:text-center placeholder:text-gray-400 border border-gray-300 p-2 w-12 text-center rounded-md flex items-center justify-center`}
+                    className={`appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none placeholder:text-center placeholder:text-gray-400 border border-gray-300 p-2 w-12 text-center rounded-md flex items-center justify-center`}
                     maxLength={1}
+                    inputMode="numeric"
                     value={otp[i]}
                     onChange={(e) => handleChange(i, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(i, e)}

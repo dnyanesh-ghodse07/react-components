@@ -43,7 +43,10 @@ const List = ({ title, description, path }: ListProps) => {
 const ComponentsPage = () => {
   return (
     <div className="">
-        <h1>Components</h1>
+      <button>
+        <Link to="/">Back</Link>
+      </button>
+        <h1 className="text-xl font-semibold text-center">Components</h1>
       {components.map((component, index) => (
         <List
           key={index}

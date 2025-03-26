@@ -36,8 +36,10 @@ const OtpInputs = ({
   const inputRef = useRef<HTMLInputElement[]>([]);
 
   const handleChange = (index: number, value: string) => {
+    const regex = /^[0-9]+$/;
+    if(!regex.test(value))return;
     const otpCopy = [...otp];
-    otpCopy[index] = value.replace(/\D/g, ""); // only digits
+    otpCopy[index]= value
     setOtp(otpCopy);
 
     if (value && index < otpLength - 1) {
@@ -74,6 +76,10 @@ const OtpInputs = ({
     if (lastIndex < otpLength - 1) {
       inputRef.current[lastIndex + 1].focus();
     }
+  };
+
+  const handleFocus = (index: number) => {
+    inputRef.current[index].select();
   };
 
   // handle auto submit
@@ -116,17 +122,20 @@ const OtpInputs = ({
                 {otp.map((_, i) => (
                   <input
                     key={i}
-                    type="number"
+                    type="text"
                     ref={(el) => (inputRef.current[i] = el!)}
                     className={`appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none placeholder:text-center placeholder:text-gray-400 border border-gray-300 p-2 w-12 text-center rounded-md flex items-center justify-center`}
                     maxLength={1}
                     inputMode="numeric"
+                    pattern="\d*"
                     value={otp[i]}
                     onChange={(e) => handleChange(i, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(i, e)}
                     onPaste={handlePaste}
                     placeholder="#"
                     disabled={isSubmitting}
+                    onFocus={() => handleFocus(i)}
+                    onBeforeInput={() => handleFocus(i)}
                   />
                 ))}
               </div>

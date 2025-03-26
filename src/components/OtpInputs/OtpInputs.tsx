@@ -36,7 +36,7 @@ const OtpInputs = ({
   const inputRef = useRef<HTMLInputElement[]>([]);
 
   const handleChange = (index: number, value: string) => {
-    const regex = /^[0-9]+$/;
+    const regex = /^[0-9]*$/;
     if(!regex.test(value))return;
     const otpCopy = [...otp];
     otpCopy[index]= value

@@ -36,11 +36,11 @@ const data = [
   },
   {
     id: 3,
-    name: "File3",
+    name: "File3 asjdhfjahsfnkm  sahdfhsajkdf safjhsakj",
     children: [
       {
         id: 5,
-        name: "file-c3",
+        name: "file-c3sdjhfjashjdfhjsdhjfghajshgkhjgkfhj",
         children: [],
       },
     ],
@@ -51,15 +51,15 @@ const File = ({ file }: { file: FileProps }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div>
+    <div className="max-w-[200px]">
       <div className="pl-2 border-l-2 border-gray-300">
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 cursor-pointer"
+          className="w-ful p-2 flex items-center justify-between my-1 border-gray-300 border-[0.1px] cursor-pointer hover:shadow-md transition-all duration-200 bg-white rounded-md"
         >
-          <span>{file.name}</span>
+          <p>{file.name.length > 18 ? file.name.substring(0, 18) + ' ...' : file.name}</p>
           {file.children?.length as number > 0 && (
-            <span>{isOpen ? "-" : "+"}</span>
+            <span className="border w-5 h-5 flex items-center justify-center ml-1 border-gray-200 rounded">{isOpen ? "-" : "+"}</span>
           )}
         </div>
         {file.children &&
@@ -79,7 +79,7 @@ const Files = () => {
   return (
     <div>
       <div className="flex items-center gap-2">
-        <h2>Files </h2>
+        <h2 className="font-semibold text-gray-500">Files </h2>
       </div>
       <div>
         {data.map((file) => (
